@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+  {% block body_block%}
+  <form method="post">
+    <!-- <input id="id_case_name" type="text" name="" value="">
+    {{ form.case_name.label}}
+    {{ form.case_name}} -->
+    {{ form.as_p}}
+    <input type="submit" class="btn btn-primay" value="Submit">
+    {% csrf_token %}
+  </form>
+  {% endblock %}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static "css/style.css"%}">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <ul class="nav navbar-nav">
+        <li><a class="navbar-brand" href="{% url 'cases' %}">Cases</a></li>
+        <li><a class="navbar-brand" href="{% url 'donors_app:donors' %}">Donors</a></li>
+        <li><a class="navbar-brand" href="{% url 'donations_app:donations' %}">Donations</a></li>
+        <li><a class="navbar-brand" href="{% url 'admin:index' %}">Admin</a></li>
+        <!-- <li><a class="navbar-link" href="{% url 'cases_app:cases'%}">cases</a></li> -->
+      </ul>
+    </div>
+    </nav>
+
+    <div class="container">
+      {% block body_block%}
+      <!-- Anything outside of this will be inherited if you extend -->
+      {% endblock %}
+    </div>
+  </body>
+</html>

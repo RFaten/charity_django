@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+  {% block body_block%}
+  <div class="container">
+    <button type="button" name="button" onclick="location.href='{% url 'donations_app:create_donation' %}'">New Donation</button>
+    <br>
+    <br>
+  </div>
+    <ul>
+      {% for donation in donations %}
+      <div>
+        <a class="inline" href="/donations_app/{{ donation.case_name }}"><li>{{ donation.case_name__case_name }}</li></a>
+        <i class="donationAmount">Total Donations: {{ donation.donation_amount }}</i>
+        <!-- <a id= "deleteBtn" href="/donations_app/delete/{{donation.id}}" class="btn btn-danger" id = '{{donation.id}}'>Delete</a> -->
+
+      </div>
+      {% endfor %}
+    </ul>
+  {% endblock %}

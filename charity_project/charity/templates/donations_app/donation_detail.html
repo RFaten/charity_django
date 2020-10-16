@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+  {% block body_block%}
+  <h3>Donation Details</h3>
+  <ul>
+    {% for donation in donations %}
+    <li><div class="inline">
+      {{donation.donor_name}}
+    </div>
+    <div class="inline">
+      {{donation.donation_amount}}
+    </div>
+    <div class="inline">
+      {% if donation.paid_flag %}
+    <input type="checkbox" name="" value="" checked onclick="return false;">
+    {% else %}
+    <input type="checkbox" name="" value="" onclick="return false;">
+    {% endif %}
+
+    </div>
+    <a href="/donations_app/delete/{{donation.id}}" class="btn btn-danger" dis id = '{{donation.id}}'>Delete</a>
+  </li>
+    {% endfor %}
+  </ul>
+  {% endblock %}
