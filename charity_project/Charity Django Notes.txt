@@ -1,6 +1,0 @@
-Return to Donation details url >> donation_app/views.py line 34 
-	>> Can use reverse bt it wouldn't work until the url in 
-	in the project's urls.py not the appication's
-
-Save the checkbox selection >> donation_app/donation_detail.html
-Linking fronted to backend
