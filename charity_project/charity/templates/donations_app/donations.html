@@ -9,7 +9,7 @@
     <ul>
       {% for donation in donations %}
       <div>
-        <a class="inline" href="/donations_app/{{ donation.case_name }}"><li>{{ donation.case_name__case_name }}</li></a>
+        <a class="inline" href="{% url 'donations_app:list_donation'  donation.case_name.id %}"><li>{{ donation.case_name__case_name }}</li></a>
         <i class="donationAmount">Total Donations: {{ donation.donation_amount }}</i>
         <!-- <a id= "deleteBtn" href="/donations_app/delete/{{donation.id}}" class="btn btn-danger" id = '{{donation.id}}'>Delete</a> -->
 

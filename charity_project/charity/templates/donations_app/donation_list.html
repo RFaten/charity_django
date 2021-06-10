@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+  {% block body_block%}
+  {% for donation in donations_list %}
+  <li>{{ donation }}</li>
+  {% endfor %}
+
+  {% endblock %}

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'cases_app',
     'donors_app',
     'donations_app',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

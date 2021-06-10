@@ -9,7 +9,7 @@
       {{ donations.management_data }}
       {% for donation in donations %}
       <li>{{ donation }}
-        <input type="button" name="" class="btn btn-danger" onclick="location.href='{% url 'donations_app:delete_donation' 36 %}'" value="Delete">
+        <input type="button" name="" class="btn btn-danger" onclick="location.href='{% url 'donations_app:delete_donation' donations.id %}'" value="Delete">
       </li>
       {% endfor %}
       <input type="submit" class="btn btn-primay" value="Save">

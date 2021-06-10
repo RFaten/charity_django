@@ -8,7 +8,8 @@ from django.forms import formset_factory, inlineformset_factory, modelformset_fa
 
 # Create your views here.
 def donations(request):
-    donations_list = Donations.objects.values('case_name__case_name', 'case_name').annotate(donation_amount = Sum('donation_amount'))
+    donations_list = Donations.objects.all()
+    # donations_list = Donations.objects.values('case_name__case_name', 'case_name').annotate(donation_amount = Sum('donation_amount'))
     # print(donations_list)
     # donations_list = Donations.objects.all().annotate(dcount=Count('donation_amount'))
     # donations_list = Donations.objects.all()
@@ -37,8 +38,15 @@ def create_donation(request):
 #
 #     return render(request, 'donations_app/donation_detail.html', context=donations_dict)
 
+def list_donation(request, id):
+    donations_list = Donations.objects.filter(case_name__id=id)
+    donations_dict = {'donations_list': donations_list}
+
+    return render(request, 'donations_app/donation_list.html', context=donations_dict)
+
+
 def update_donation(request, id):
-    donations_list = Donations.objects.filter(case_name=id)
+    donations_list = Donations.objects.filter(case_name__id=id)
     DonationsFormSet = modelformset_factory(Donations, fields=('donor_name', 'donation_amount', 'paid_flag'), extra=0)
     formset = DonationsFormSet(queryset=donations_list)
     donations_dict = {'donations': formset}

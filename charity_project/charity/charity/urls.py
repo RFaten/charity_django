@@ -26,4 +26,9 @@ urlpatterns = [
     path('donations_app/', include('donations_app.urls')),
     # path('<id>/', views.update_case, name='update_case'),
     path('donations_app/<id>/', donViews.update_donation, name='update_donation'),
+
+    # RESTFUL URLS
+    path('api/cases_app/', include('cases_app.api.urls')),
+    path('api/donors_app/', include('donors_app.api.urls')),
+    path('api/donations_app/', include('donations_app.api.urls')),
 ]
