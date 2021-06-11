@@ -9,3 +9,11 @@ class Cases(models.Model):
 
     def __str__(self):
         return self.case_name
+
+    @property
+    def current_donations_amount(self):
+        sum = 0
+        donation_list = self.donation_cases.all()
+        for donation in donation_list:
+            sum += donation.donation_amount
+        return sum
